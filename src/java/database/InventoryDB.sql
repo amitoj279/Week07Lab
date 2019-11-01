@@ -6,13 +6,11 @@ USE InventoryDB;
 CREATE TABLE `role_table` (
   `RoleID` int(11) NOT NULL,
   `RoleName` varchar(25) NOT NULL,
-  PRIMARY KEY (`RoleID`)
-);
+  PRIMARY KEY (`RoleID`));
 
 INSERT INTO `role_table` VALUES (1, 'system admin');
 INSERT INTO `role_table` VALUES (2, 'regular user');
 INSERT INTO `role_table` VALUES (3, 'company admin');
-
 
 CREATE TABLE if not exists user_table (
     email VARCHAR(40) NOT NULL UNIQUE,
@@ -24,9 +22,7 @@ CREATE TABLE if not exists user_table (
 
     CONSTRAINT user_email_pk PRIMARY KEY (email),
     CONSTRAINT `FK_User_Role` FOREIGN KEY (`role`)
-        REFERENCES `role_table` (`RoleID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-
-);
+        REFERENCES `role_table` (`RoleID`) ON DELETE RESTRICT ON UPDATE RESTRICT);
 
 INSERT INTO user_table (active, email, fname, lname, password, `role`)
     VALUES (TRUE, 'admin@admin.com', 'First', 'Last', 'password', 1);

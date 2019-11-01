@@ -6,14 +6,13 @@ import javax.naming.NamingException;
 import java.sql.*;
 
 /**
- * 
+ *
  * @author Ayden and David
  */
 public class ConnectionPool {
 
     /**
-     *
-     * ALL THIS CODE IS TAKEN FROM THE SLIDES
+     * CODE FROM SLIDE
      */
     private static ConnectionPool pool = null;
     private static DataSource dataSource = null;
@@ -25,7 +24,6 @@ public class ConnectionPool {
         } catch (NamingException e) {
             System.out.println(e);
         }
-
     }
 
     public static synchronized ConnectionPool getInstance() {
@@ -42,7 +40,6 @@ public class ConnectionPool {
             System.out.println(e);
             return null;
         }
-
     }
 
     public void freeConnection(Connection c) {
@@ -52,5 +49,4 @@ public class ConnectionPool {
             System.out.println(e);
         }
     }
-
 }

@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
 import java.io.Serializable;
 
 /**
- *
  * @author awarsyle
  */
 public class Role implements Serializable {
+
     private int roleID;
     private String roleName;
 
@@ -38,6 +33,4 @@ public class Role implements Serializable {
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-    
-    
 }
